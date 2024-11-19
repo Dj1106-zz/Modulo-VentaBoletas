@@ -1,0 +1,13 @@
+public class ControladorVenta {
+    private IVentaDAO ventaDAO;
+
+    public ControladorVenta(IVentaDAO ventaDAO) {
+        this.ventaDAO = ventaDAO;
+    }
+
+    public void realizarVenta(IFuncion funcion, int cantidadBoletos) {
+        IVenta venta = new Venta(funcion, cantidadBoletos);
+        ventaDAO.guardar(venta);
+        venta.realizarVenta();
+    }
+}
