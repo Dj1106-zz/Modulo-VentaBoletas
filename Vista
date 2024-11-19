@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class VistaVenta {
+    private ControladorVenta controladorVenta;
+
+    public VistaVenta(ControladorVenta controladorVenta) {
+        this.controladorVenta = controladorVenta;
+    }
+
+    public void iniciar() {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese la sala:");
+        String sala = scanner.nextLine();
+        
+        System.out.println("Ingrese la película:");
+        String pelicula = scanner.nextLine();
+        
+        System.out.println("Ingrese la hora:");
+        String hora = scanner.nextLine();
+        
+        int[] asientos = {1, 2, 3, 4, 5}; // Asientos de ejemplo
+
+        IFuncion funcion = new Funcion(sala, pelicula, hora, asientos);
+        
+        System.out.println("Ingrese la cantidad de boletos:");
+        int cantidadBoletos = scanner.nextInt();
+        
+        controladorVenta.realizarVenta(funcion, cantidadBoletos);
+        scanner.close();
+    }
+}
