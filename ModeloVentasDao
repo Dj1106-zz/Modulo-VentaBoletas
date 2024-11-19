@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class VentaDAO implements IVentaDAO {
+    private List<IVenta> ventas = new ArrayList<>();
+
+    @Override
+    public void guardar(IVenta venta) {
+        ventas.add(venta);
+        System.out.println("Venta guardada con éxito.");
+    }
+
+    @Override
+    public boolean create(IVenta venta) {
+        return ventas.add(venta);
+    }
+
+    @Override
+    public IVenta read(int index) {
+        if (index >= 0 && index < ventas.size()) {
+            return ventas.get(index);
+        }
+        return null;
+    }
+
+    @Override
+    public void update(int index, IVenta venta) {
+        if (index >= 0 && index < ventas.size()) {
+            ventas.set(index, venta);
+        }
+    }
+
+    @Override
+    public void delete(int index) {
+        if (index >= 0 && index < ventas.size()) {
+            ventas.remove(index);
+        }
+    }
+
+    @Override
+    public List<IVenta> readAll() {
+        return ventas;
+    }
+
+    @Override
+    public int buscarIndex(IVenta venta) {
+        return ventas.indexOf(venta);
+    }
+}
