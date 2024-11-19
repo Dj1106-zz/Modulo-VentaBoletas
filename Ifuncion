@@ -1,0 +1,13 @@
+public interface IFuncion {
+    String getSala();
+    void setSala(String sala);
+
+    String getPelicula();
+    void setPelicula(String pelicula);
+
+    String getHora();
+    void setHora(String hora);
+
+    int[] getAsientos();
+    void setAsientos(int[] asientos);
+}
