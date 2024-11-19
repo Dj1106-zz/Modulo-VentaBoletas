@@ -1,0 +1,76 @@
+import java.time.LocalDateTime;
+
+public class Venta implements IVenta {
+    private String sala;
+    private int cantidadBoletos;
+    private LocalDateTime fechaVenta;
+    private double valorBoleta;
+    private IFuncion funcion;
+
+    public Venta(IFuncion funcion, int cantidadBoletos) {
+        this.funcion = funcion;
+        this.cantidadBoletos = cantidadBoletos;
+        this.fechaVenta = LocalDateTime.now();
+        this.valorBoleta = calcularValorBoleta();
+    }
+
+    private double calcularValorBoleta() {
+        // Aquí puedes agregar la lógica de cálculo del precio
+        return 10.0; // Precio base como ejemplo
+    }
+
+    @Override
+    public void realizarVenta() {
+        System.out.println("Venta realizada para la película: " + funcion.getPelicula());
+    }
+
+    @Override
+    public String getSala() {
+        return sala;
+    }
+
+    @Override
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+
+    @Override
+    public int getCantidadBoletos() {
+        return cantidadBoletos;
+    }
+
+    @Override
+    public void setCantidadBoletos(int cantidadBoletos) {
+        this.cantidadBoletos = cantidadBoletos;
+    }
+
+    @Override
+    public LocalDateTime getFechaVenta() {
+        return fechaVenta;
+    }
+
+    @Override
+    public void setFechaVenta(LocalDateTime fechaVenta) {
+        this.fechaVenta = fechaVenta;
+    }
+
+    @Override
+    public double getValorBoleta() {
+        return valorBoleta;
+    }
+
+    @Override
+    public void setValorBoleta(double valorBoleta) {
+        this.valorBoleta = valorBoleta;
+    }
+
+    @Override
+    public IFuncion getFuncion() {
+        return funcion;
+    }
+
+    @Override
+    public void setFuncion(IFuncion funcion) {
+        this.funcion = funcion;
+    }
+}
