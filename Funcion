@@ -1,0 +1,53 @@
+public class Funcion implements IFuncion {
+    private String sala;
+    private String pelicula;
+    private String hora;
+    private int[] asientos;
+
+    public Funcion(String sala, String pelicula, String hora, int[] asientos) {
+        this.sala = sala;
+        this.pelicula = pelicula;
+        this.hora = hora;
+        this.asientos = asientos;
+    }
+
+    @Override
+    public String getSala() {
+        return sala;
+    }
+
+    @Override
+    public void setSala(String sala) {
+        this.sala = sala;
+    }
+
+    @Override
+    public String getPelicula() {
+        return pelicula;
+    }
+
+    @Override
+    public void setPelicula(String pelicula) {
+        this.pelicula = pelicula;
+    }
+
+    @Override
+    public String getHora() {
+        return hora;
+    }
+
+    @Override
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    @Override
+    public int[] getAsientos() {
+        return asientos;
+    }
+
+    @Override
+    public void setAsientos(int[] asientos) {
+        this.asientos = asientos;
+    }
+}
