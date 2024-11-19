@@ -1,0 +1,20 @@
+import java.time.LocalDateTime;
+
+public interface IVenta {
+    String getSala();
+    void setSala(String sala);
+
+    int getCantidadBoletos();
+    void setCantidadBoletos(int cantidadBoletos);
+
+    LocalDateTime getFechaVenta();
+    void setFechaVenta(LocalDateTime fechaVenta);
+
+    double getValorBoleta();
+    void setValorBoleta(double valorBoleta);
+
+    IFuncion getFuncion();
+    void setFuncion(IFuncion funcion);
+
+    void realizarVenta();
+}
