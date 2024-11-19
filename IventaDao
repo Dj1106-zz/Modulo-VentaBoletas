@@ -1,0 +1,11 @@
+import java.util.List;
+
+public interface IVentaDAO {
+    void guardar(IVenta venta);
+    boolean create(IVenta venta);
+    IVenta read(int index);
+    void update(int index, IVenta venta);
+    void delete(int index);
+    List<IVenta> readAll();
+    int buscarIndex(IVenta venta);
+}
